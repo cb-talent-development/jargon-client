@@ -1,5 +1,5 @@
-require 'jargon/client'
 require 'jargon/version'
+require 'jargon/client'
 
 module Jargon
   def self.root

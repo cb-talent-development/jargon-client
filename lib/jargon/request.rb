@@ -33,8 +33,8 @@ module Jargon
       parse_response(response)
     end
 
-    def save(path, model)
-      model[:id] ? put("#{path}/#{model[:id]}", model) : post(path, model)
+    def save(path, model, optional_post_only_suffix='')
+      model[:id] ? put("#{path}/#{model[:id]}", model) : post(path + optional_post_only_suffix, model)
     end
 
     def parse_response(response)

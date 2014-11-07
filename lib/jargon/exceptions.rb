@@ -1,9 +1,7 @@
 module Jargon
   module Exceptions
-    class IdExpected < StandardError
-    end
+    class IdExpected < ArgumentError; end
 
-    class IdNotExpected < StandardError
-    end
+    class IdNotExpected < ArgumentError; end
   end
 end

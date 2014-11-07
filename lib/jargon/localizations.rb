@@ -1,21 +1,16 @@
 module Jargon
   class Localizations < Jargon::Resource
+    include Jargon::Helpers
     include Jargon::Locales
 
     def query(params = {})
-      if id
-        raise IdNotExpected
-      else
-        client.get('/localizations', params)
-      end
+      rejects_id
+      client.get('/localizations', params)
     end
 
     def get
-      if id
-        client.get("/localizations/#{id}")
-      else
-        raise IdExpected
-      end
+      expects_id
+      client.get("/localizations/#{id}")
     end
 
     def save(localization)
@@ -23,11 +18,8 @@ module Jargon
     end
 
     def delete
-      if id
-        client.delete("/localizations/#{id}")
-      else
-        raise IdExpected
-      end
+      expects_id
+      client.delete("/localizations/#{id}")
     end
   end
 end
