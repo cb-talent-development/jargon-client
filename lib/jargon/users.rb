@@ -4,7 +4,7 @@ module Jargon
       if id
         client.get("/users/#{id}")
       else
-        raise IdExpected
+        raise Jargon::Exceptions::IdExpected
       end
     end
 
