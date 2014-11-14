@@ -4,6 +4,21 @@ RSpec.describe Jargon::Locales do
 
   let(:client) { Jargon::Client.new(access_token: '123') }
 
+  describe :query do
+    context 'with an existing localization' do
+      it 'should correctly make the request' do
+        client.expects(:get).with('/localizations/1/locales', {}).returns('response')
+        expect(client.localizations(1).query_locales).to eq('response')
+      end
+    end
+
+    context 'without a localization' do
+      it 'should throw the correct exception' do
+        expect { client.localizations.query_locales }.to raise_error(Jargon::Exceptions::IdExpected)
+      end
+    end
+  end
+
   describe :get do
     context 'with an existing locale' do
       it 'should correctly make the request' do
