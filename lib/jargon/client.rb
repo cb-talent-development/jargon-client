@@ -39,7 +39,11 @@ module Jargon
     end
 
     def get_cc_token
-      client = OAuth2::Client.new(@key, @secret, site: @base_url)
+      client = OAuth2::Client.new(@key, @secret,
+                                  site: @base_url,
+                                  authorize_url: '/api/oauth/authorize',
+                                  token_url: '/api/oauth/token')
+
       client.client_credentials.get_token
     end
   end
