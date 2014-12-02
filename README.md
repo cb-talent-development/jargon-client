@@ -16,13 +16,13 @@ client.localizations.query.each do |localization|
 end
 ```
 
-Alternatively, jargon-client will handle OAuth2 authentication for you:
+Alternatively, jargon-client will handle OAuth2 authentication (Password Credentials flow) for you:
 
 ```ruby
 require 'jargon-client'
 
-client = Jargon::Client.new(key: 'my-app-id', secret: 'secrey-key-ssh', base_url: 'base_url')
- 
+client = Jargon::Client.new(key: 'my-app-id', secret: 'secrey-key-ssh', base_url: 'base_url', username: 'user@name.com', password: '1234')
+
 puts client.localizations(id).get
 puts client.users(id).get
 ```
