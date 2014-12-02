@@ -26,6 +26,8 @@ module Jargon
       else
         @key = hasharg[:key]
         @secret = hasharg[:secret]
+        @username = hasharg[:username]
+        @password = hasharg[:password]
         @access_token = get_cc_token
       end
     end
@@ -44,7 +46,7 @@ module Jargon
                                   authorize_url: '/api/oauth/authorize',
                                   token_url: '/api/oauth/token')
 
-      client.client_credentials.get_token
+      client.password.get_token(@username, @password)
     end
   end
 end
