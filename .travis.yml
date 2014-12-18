@@ -1,6 +1,9 @@
 language: ruby
 rvm:
-  - 2.1.3
+- 2.1.3
 notifications:
   recipients:
-    - ContentEnablementProductTeam@careerbuilder.com
+  - ContentEnablementProductTeam@careerbuilder.com
+env:
+  global:
+    secure: f2Zss95rbzr7c9Jk1dEPXILr9Bub/6Xs1uBUfCj+sjI24BAmBbI+b2ihhnzWP1H36gvTKgc9YPXQPVnrWURKSV9xRHH1XaeQDs669hpXpJrWM+kqf/xEcYpPDLp5UR1NpoNpwmcI6nM8GS/3fjOJnzw5RR/8GJab7s8PZh/lR3Q=
